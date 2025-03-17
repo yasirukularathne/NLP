@@ -1,0 +1,15 @@
+from textblob import TextBlob #pip install textblob
+
+def get_sentiment(text):
+    analysis = TextBlob(text)
+    
+    # polarity is between -1 (negative) and 1 (positive)
+    if analysis.sentiment.polarity > 0:
+        return "Positive"
+    elif analysis.sentiment.polarity < 0:
+        return "Negative"
+    else:
+        return "Neutral"
+    
+input_sentence = input("Enter a sentence: ")
+print(f"Sentiment: {get_sentiment(input_sentence)}")
