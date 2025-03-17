@@ -1,0 +1,23 @@
+#step1=>pip install transformers
+#step2=>pip install pytorch
+
+
+from transformers import pipeline
+
+
+# Load the pre-trained sentiment analysis pipeline
+classifier = pipeline("sentiment-analysis")
+
+
+# Get user input
+input_sentence = input("Enter a sentence: ")
+
+
+# Predict the sentiment
+result = classifier(input_sentence)
+
+
+# Display the result
+print(f"Sentiment: {result[0]['label']} with a score of {result[0]['score']}")
+
+
